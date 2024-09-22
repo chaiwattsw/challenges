@@ -11,12 +11,13 @@ module.exports = {
   devtool: 'inline-source-map',
 
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
+    inline: true,
+    host: '0.0.0.0',
+
     port: 3000,
     historyApiFallback: true,
-    hot: true,
+    disableHostCheck: true,
+    contentBase: 'public',
   },
 
   resolve: {
@@ -36,8 +37,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
       },
     ],
