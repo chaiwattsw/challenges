@@ -1,7 +1,7 @@
 const path = require('path');
 
-const config = {
-  entry: './src/index.js',
+module.exports = {
+  entry: './src/index.tsx',
   output: {
     publicPath: '/dist/',
     path: path.resolve(__dirname, 'dist'),
@@ -11,21 +11,33 @@ const config = {
   devtool: 'inline-source-map',
 
   devServer: {
-    inline: true,
-    host: '0.0.0.0',
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     port: 3000,
     historyApiFallback: true,
-    disableHostCheck: true,
-    contentBase: 'public',
+    hot: true,
+  },
+
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
 
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
+      {
         test: /\.js$/,
-        exclude: [/node_modules/],
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         },
       },
     ],
@@ -33,5 +45,3 @@ const config = {
 
   mode: 'development',
 };
-
-module.exports = config;
