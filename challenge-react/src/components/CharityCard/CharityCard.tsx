@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Overlay from '../Overlay';
 import { Charity } from '../../types';
 import {
   Card,
@@ -10,6 +9,7 @@ import {
   CharityName,
 } from './styles';
 import { Button } from '../Button';
+import { Overlay } from '../Overlay';
 
 export interface CharityCardProps {
   charity: Charity;

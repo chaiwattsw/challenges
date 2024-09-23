@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { formatCurrency, summaryDonations } from './helpers';
 import { Charity, RootState } from './types';
-import CharityCard from './components/CharityCard';
-import Message from './components/Message';
+import { CharityCard } from './components/CharityCard';
+import { Message } from './components/Message';
 
 const AppContainer = styled.div`
   max-width: 1200px;

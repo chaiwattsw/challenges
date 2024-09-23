@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioButtonGroup from '../RadioButtonGroup';
+
 import {
   CloseButton,
   DonationInstruction,
@@ -8,6 +8,7 @@ import {
 } from './styles';
 import { DONATE_AMOUNT_OPTIONS } from '../../constants';
 import { Button } from '../Button';
+import { RadioButtonGroup } from '../RadioButtonGroup';
 
 export interface DonationOverlayProps {
   isVisible: boolean;
