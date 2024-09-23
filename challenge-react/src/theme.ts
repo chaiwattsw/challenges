@@ -5,6 +5,9 @@ const theme: DefaultTheme = {
     primary: '#4a90e2',
     background: '#ffffff',
   },
+  fonts: {
+    main: 'Arial, sans-serif',
+  },
 };
 
 export default theme;
